@@ -1,0 +1,185 @@
+@import "/src/assets/styles/colors.scss";
+@import "/src/assets/styles/sizes.scss";
+
+@mixin hamburger-line {
+    height: 3px;
+    width: 100%;
+    background-color: $font-color-main;
+    position: absolute;
+    left: 0;
+}
+
+.headerContainer{
+    width: 100%;
+    height: 100vh;
+    padding: 0 0 13px 0;
+    .navbarContainer{
+        width: 100%;
+        background-color: $background-main;
+        opacity: 1;
+        position: fixed;
+        z-index: 2;
+        .navContainer{
+            height: 104px;
+            border-bottom: 4px solid $color-secondary;
+            padding: 26px 140px 24px;
+            display: flex;
+            flex-direction: row;
+            @media only screen and (max-width: $screen-xxl){
+                padding: 26px 20px 24px;
+            }
+            .headerHamburger{
+                display: inline-block;
+                background-color: transparent;
+                padding: 0px;
+                cursor: pointer;
+                border: 0;
+                margin: 0;
+                z-index: 999;
+                @media only screen and (max-width: $screen-xl){
+                    padding: 10px;
+                }
+                &:focus{
+                    outline: none;
+                }
+                .hamburgerBox{
+                    width: 30px;
+                    height: 24px;
+                    display: none;
+                    position: absolute;
+                    @media only screen and (max-width: $screen-xl){
+                        display: inline-block;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    .hamburgerInside{
+                        @include hamburger-line;
+
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transition: background-color .1s .2s ease-in-out;
+                        &::before,
+                        &::after{
+                            @include hamburger-line;
+
+                            content: '';
+                            transition: transform .2s .2s ease-in-out;
+                        }
+                        &::before{
+                            top: -10px;
+                        }
+                        &::after{
+                            top: 10px;
+                        }
+                    }
+                }
+            }
+            .hamburgerActive .hamburgerBox .hamburgerInside{
+                background-color: transparent;
+                &::before{
+                    content: '';
+                    transform: translateY(10px) rotate(45deg);
+                }
+                &::after{
+                    content: '';
+                    transform: translateY(-10px) rotate(-45deg) ;
+                }
+        
+            }
+
+            .headerLogo{
+                width: 216px;
+                height: 50px;
+                margin-right: 60px;
+                @media only screen and (max-width: $screen-xxl){
+                    argin-right: 20px;
+                }
+            }
+
+            .headerHamburger,
+            .linksContainer{
+                transition: transform .35s .21s ease-in-out;
+            }
+
+            .linksContainer{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;   
+                align-items: center; 
+                @media only screen and (max-width: $screen-xl){
+                    width: 350px;
+                    height: 300px;
+                    padding: 50px 0;
+                    flex-direction: column;
+                    background-color: $background-main;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -300px);
+                    border-bottom: 4px solid $color-secondary;
+                }
+                .navigationList{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    list-style: none;
+                    @media only screen and (max-width: $screen-xl){
+                        flex-direction: column;
+                        padding: 20px;
+                    }
+                    li{
+                        text-transform: uppercase;
+                        padding: 14px 40px 13px 40px;
+                        text-align: left;
+                        font: normal normal 300 12px/14px Montserrat;
+                        letter-spacing: 4.8px;
+                        color: $color-primary;
+                        @media only screen and (max-width: $screen-xxl){
+                            padding: 14px 15px 13px 15px;
+                        }
+                        &:hover{
+                            background: $background-main 0% 0% no-repeat padding-box;
+                            box-shadow: 0px 5px 10px $color-tertiary;
+                            border-radius: 21px;
+                            cursor: pointer;
+                            transition: all 0.2s ease-in-out;
+                        }
+                        a:link,
+                        a:visited{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .socialMediaContainer > img{
+                    margin-left: 11.9px;
+                    transition: all 0.35s ease-in-out;
+                    cursor: pointer;
+                    &:hover{
+                        filter: invert(47%) sepia(62%) saturate(3843%) hue-rotate(325deg) brightness(96%) contrast(112%);
+                    }
+                    @media only screen and (max-width: $screen-xl){
+                        margin: 0 25px;
+                    }
+                }
+            }
+            .linksContainerActive{
+                transform: translate(-50%, 0px);
+            }
+        }
+    }
+    .headerImageContainer{
+        height: 100%;
+        position: relative;
+        top: 13px;
+        .headerImage{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            object-position: center;
+
+        }
+    }
+}
