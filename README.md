@@ -1,3 +1,12 @@
+# Live version
+
+For live version click [here](https://wwapp.vercel.app/). 
+
+
+## To run code on your machine
+
+Once you download code on your machine, you should run ### `npm install ` in project directory
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
