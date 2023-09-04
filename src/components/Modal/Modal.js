@@ -17,18 +17,18 @@ const Modal = ({open, onClose}) => {
       }
 
     const responseBody = {
-        firstName: "", 
-        lastName: "", 
+        name: "", 
+        surname: "", 
         email: "0", 
-        consent: false
+        accept: false
     }
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        responseBody.firstName = name;
-        responseBody.lastName = lastName;
+        responseBody.name = name;
+        responseBody.surname = lastName;
         responseBody.email = email;
-        responseBody.consent = consent;
+        responseBody.accept = consent;
         console.log(JSON.stringify(responseBody))
 
     }
