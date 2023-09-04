@@ -5,9 +5,9 @@ For live version click [here](https://wwapp.vercel.app/).
 #Summary
 # Aplication created with:
 
-React.\
+React
 
-SCSS (module.scss).\
+SCSS (module.scss)
 
 ## To run code on your machine
 
