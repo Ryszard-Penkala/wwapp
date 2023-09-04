@@ -2,10 +2,14 @@
 
 For live version click [here](https://wwapp.vercel.app/). 
 
+#Summary
+Aplication created with:
+# React
+# SCSS (module.scss)
 
 ## To run code on your machine
 
-Once you download code on your machine, you should run ### `npm install ` in project directory
+Once you download code on your machine, you should run  `npm install ` in project directory. Once all dependencies install please use `npm start` script to run app in development mode
 
 # Getting Started with Create React App
 
